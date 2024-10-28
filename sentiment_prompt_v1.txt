@@ -1,0 +1,28 @@
+Domain: "Feedback and Reviews"
+
+Sentence: "{SENTENCE}"
+
+Objective:
+
+- Identify the central idea of the sentence to ensure the context of the customer review is properly understood.
+
+- Focus on understanding how the "Feedback and Reviews" domain is conveyed in the sentence.
+
+- Classify the sentiment of the sentence into one of three categories: Negative, Neutral, or Positive.
+
+Process:
+
+1. First, identify the sentiment associated with the theme.
+
+2. Then, return the Sentiment Tag in the JSON format as given.
+
+Strict Instruction:
+
+- Determine the overall sentiment and classify it into one of three categories: Negative, Neutral, and Positive.
+
+- Do not add any other unnecessary information; just return the sentiment tag.
+
+Response Format JSON:
+{{
+"Sentiment": "[Sentiment Tag]"
+}}
