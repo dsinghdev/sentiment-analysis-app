@@ -21,4 +21,4 @@ A simple Streamlit app template for you to modify!
 
 ### Link to the App
 
-[Sentiment Analysis App](https://sentiment-anlysis-app.streamlit.app/)
+[Sentiment Analysis App](https://sentiment-analysis-application.streamlit.app/)
