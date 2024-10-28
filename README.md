@@ -17,3 +17,8 @@ A simple Streamlit app template for you to modify!
    ```
    $ streamlit run streamlit_app.py
    ```
+
+
+### Link to the App
+
+[Sentiment Analysis App](https://sentiment-anlysis-app.streamlit.app/)
