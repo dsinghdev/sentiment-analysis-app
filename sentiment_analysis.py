@@ -10,7 +10,7 @@ hf_token = os.getenv("HF_TOKEN")
 if not hf_token:
     raise ValueError("Hugging Face API token not found. Please set the HF_TOKEN environment variable.")
 
-client = InferenceClient(api_key=hf_token)
+client = InferenceClient("Qwen/Qwen2.5-72B-Instruct", token=hf_token)
 
 def load_prompt(file_path):
     """Load prompt from a text file."""
@@ -26,22 +26,19 @@ def predict_sentiment(review):
     """Predict sentiment using the Hugging Face model."""
     try:
         prompt = create_prompt(review)
-        messages = [{"role": "user", "content": prompt}]
-        
-        response = client.chat.completions.create(
+        response = client.text_generation(
+            prompt,
             model="Qwen/Qwen2.5-72B-Instruct",
-            messages=messages,
             temperature=0,
-            max_tokens=500,
+            max_new_tokens=500,
         )
 
-        # Print full response for debugging
         print("Model Response:", response)
+
         try:
-            sentiment_str = response.choices[0].message["content"]
-            sentiment = json.loads(sentiment_str)
+            sentiment = json.loads(response)
         except json.JSONDecodeError:
-            sentiment = {"Sentiment": sentiment_str.strip()}
+            sentiment = {"Sentiment": response.strip()}
 
         return sentiment
 
