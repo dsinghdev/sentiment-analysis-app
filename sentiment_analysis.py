@@ -29,7 +29,7 @@ def predict_sentiment(review):
         messages = [{"role": "user", "content": prompt}]
         
         response = client.chat.completions.create(
-            model="llama3-70b-8192",   # Groq supports LLaMA 3 models, not Qwen
+            model="llama-3.3-70b-versatile",   # Groq supports LLaMA 3 models, not Qwen
             messages=messages,
             temperature=0,
             max_tokens=500,
