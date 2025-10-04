@@ -38,7 +38,7 @@ def predict_sentiment(review):
         print("Model Response:", response)
 
         try:
-            sentiment_str = response.choices[0].message["content"]
+            sentiment_str = response.choices[0].message.content
             sentiment = json.loads(sentiment_str)
         except json.JSONDecodeError:
             sentiment = {"Sentiment": sentiment_str.strip()}
